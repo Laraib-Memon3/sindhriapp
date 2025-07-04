@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sindhri/view/home_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +10,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+    return MaterialApp(
+      //add dark background to all screens
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+        textTheme: TextTheme(
+          headlineMedium: TextStyle(color: Colors.white, fontSize: 24),
+          bodyMedium: TextStyle(color: Colors.white70, fontSize: 16),
         ),
       ),
+      title: 'Sindhri',
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }
