@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sindhri/view/Product1.dart';
 import 'package:sindhri/view/home_screen.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class MainApp extends StatelessWidget {
       ),
       title: 'Sindhri',
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: Product1(),
     );
   }
 }
