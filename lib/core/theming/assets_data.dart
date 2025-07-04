@@ -8,6 +8,7 @@ class AssetsData {
       'assets/Images/splash/Splash_Burger_One.png';
   static const String splashBurgerTwo =
       'assets/Images/splash/Splash_Burger_Two.png';
+  static const String splash = 'assets/Images/splash/splash.png';
   static const String bacons = 'assets/Images/toppings/Bacons.png';
   static const String coleslaw = 'assets/Images/toppings/Coleslaw.png';
   static const String fries = 'assets/Images/toppings/Fries.png';

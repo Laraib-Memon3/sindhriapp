@@ -1,71 +1,90 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sindhri/core/theming/assets_data.dart';
+import 'package:sindhri/view/widgets/bottom_navbar.dart';
+import 'package:sindhri/view/widgets/header_widget.dart';
+import 'package:sindhri/view/widgets/product_grid_widget.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Sindhri',
-                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  // SvgPicture.asset(
-                  //   'assets/images/profile.svg',
-                  //   width: 50,
-                  //   height: 50,
-                  // ),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Image.asset(
-                      'assets/profile.png',
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                width: double.infinity,
-                child: Text(
-                  'Order your favorite food.',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xffD9D9D9),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              Row(children: [
-                  
-                ],
-              ),
+              const SizedBox(height: 10),
+              const HeaderSearchBarSection(),
+              const SizedBox(height: 20),
+              const _CategoryButtons(),
+              const SizedBox(height: 10),
+              const Expanded(child: ProductGrid()),
             ],
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          backgroundColor: const Color(0xffFF0215),
+          child: SvgPicture.asset(
+            AssetsData.addIcon,
+            width: 24,
+            height: 24,
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: const BottomNavBar(),
+      ),
+    );
+  }
+}
+
+class _CategoryButtons extends StatelessWidget {
+  const _CategoryButtons();
+
+  @override
+  Widget build(BuildContext context) {
+    final categories = ['All', 'Combos', 'Sliders', 'Classics'];
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: categories.map((cat) {
+          final isSelected = cat == 'All';
+          return Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: isSelected
+                    ? const Color(0xffFF0215)
+                    : const Color(0xffFFFFFF),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10.0,
+                  vertical: 5.0,
+                ),
+                child: Text(
+                  cat,
+                  style: TextStyle(
+                    color: isSelected ? Colors.white : const Color(0xff6A6A6A),
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }
