@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sindhri/core/services/firestore_service.dart';
 import 'package:sindhri/core/theming/assets_data.dart';
+import 'package:sindhri/data/repos/meal_repo.dart';
 import 'package:sindhri/view/home_screen.dart';
+import 'package:sindhri/view/manager/meal_cubit/meal_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,7 +16,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-
     super.initState();
     _navigateToHome();
   }
@@ -24,7 +27,12 @@ class _SplashScreenState extends State<SplashScreen> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const HomeScreen();
+          return BlocProvider(
+            create: (context) => MealCubit(
+              mealRepo: MealRepo(firestoreService: FirestoreService()),
+            ),
+            child: const HomeScreen(),
+          );
         },
       ),
     );
