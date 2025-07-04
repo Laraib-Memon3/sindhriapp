@@ -19,12 +19,12 @@ This is a Flutter project that provides a cross-platform mobile application. The
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/sindhri.git
+   git clone https://github.com/Laraib-Memon3/sindhriapp.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd sindhri
+   cd sindhriapp
    ```
 
 3. Install dependencies:
