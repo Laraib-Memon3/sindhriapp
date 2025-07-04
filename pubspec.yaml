@@ -17,3 +17,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/Images/Customize_Your_Burger/
+    - assets/Images/Payment/
+    - assets/Images/profile/
+    - assets/Images/toppings/
+    - assets/SVG/home/
+    - assets/SVG/splash/
+    - assets/SVG/
