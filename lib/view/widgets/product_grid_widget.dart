@@ -3,7 +3,7 @@ import 'package:sindhri/core/theming/assets_data.dart';
 
 
 class ProductGrid extends StatelessWidget {
-  const ProductGrid();
+  const ProductGrid({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sindhri/core/theming/assets_data.dart';
 
 class HeaderSearchBarSection extends StatelessWidget {
-  const HeaderSearchBarSection();
+  const HeaderSearchBarSection({super.key});
 
   @override
   Widget build(BuildContext context) {

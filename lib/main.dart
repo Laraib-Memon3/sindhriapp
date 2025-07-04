@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:sindhri/view/home_screen.dart';
 import 'package:sindhri/view/splash_screen.dart';
 
 void main() async {
@@ -14,7 +13,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
     return MaterialApp(
       //added dark background to all screens
       theme: ThemeData(
@@ -28,11 +26,6 @@ class MainApp extends StatelessWidget {
       title: 'Sindhri',
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-=======
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
->>>>>>> Stashed changes
     );
   }
 }
