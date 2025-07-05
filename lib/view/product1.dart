@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Product1 extends StatefulWidget {
+  const Product1({super.key});
+
   @override
   State<Product1> createState() => _Product1State();
 }
