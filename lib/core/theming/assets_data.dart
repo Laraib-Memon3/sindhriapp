@@ -32,4 +32,8 @@ class AssetsData {
   static const String logo = 'assets/SVG/splash/logo.svg';
   static const String addIcon = 'assets/SVG/add.svg';
   static const String removeIcon = 'assets/SVG/remove.svg';
+  static const String google = 'assets/Images/google.png';
+  static const String facebook = 'assets/Images/facebook.png';
+  static const String twitter = 'assets/Images/twitter.png';
+
 }
