@@ -11,12 +11,7 @@ plugins {
 android {
     namespace = "com.example.sindhri"
     compileSdk = flutter.compileSdkVersion
-<<<<<<< HEAD
-    ndkVersion = flutter.ndkVersion
-    ndkVersion = "27.0.12077973"
-=======
     ndkVersion = "29.0.13599879"
->>>>>>> 9aebabfc80088c42afa2d18ab5a438f99a3070b1
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
