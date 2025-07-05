@@ -242,20 +242,3 @@ class _LoginScreenState extends State<SignUpScreen> {
 
 
 
-# Open your terminal and navigate to your project directory
-cd /c:/Users/Laraib/Documents/sindhriapp
-
-# Initialize git if you haven't already
-git init
-
-# Add all files to staging
-git add .
-
-# Commit your changes with a message
-git commit -m "Add signup screen UI"
-
-# Add your remote repository (replace the URL with your actual repo)
-git remote add origin https://github.com/your-username/your-repo.git
-
-# Push your code to the remote repository (main branch)
-git push -u origin main
