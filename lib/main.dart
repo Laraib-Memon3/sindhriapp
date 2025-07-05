@@ -1,11 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:sindhri/view/Product1.dart';
-import 'package:sindhri/view/home_screen.dart';
-=======
-import 'package:sindhri/view/splash_screen.dart';
->>>>>>> 049f59042032a7b9882b5231bebee34de95eb6da
+
 
 import 'view/splash_screen.dart';
 
@@ -32,11 +27,7 @@ class MainApp extends StatelessWidget {
       ),
       title: 'Sindhri',
       debugShowCheckedModeBanner: false,
-<<<<<<< HEAD
-      home: Product1(),
-=======
       home: SplashScreen(),
->>>>>>> 049f59042032a7b9882b5231bebee34de95eb6da
     );
   }
 }
