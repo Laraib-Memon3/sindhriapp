@@ -31,6 +31,7 @@ flutter:
     - assets/Images/Payment/
     - assets/Images/profile/
     - assets/Images/splash/
+    - assets/Images/LoginScreen/
     - assets/Images/toppings/
     - assets/SVG/home/
     - assets/SVG/splash/
