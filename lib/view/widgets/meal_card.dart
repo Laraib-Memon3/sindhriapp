@@ -3,7 +3,7 @@ import 'package:sindhri/data/models/meal_model.dart';
 
 class MealCard extends StatelessWidget {
   const MealCard({super.key, required this.meals});
-  final MealModel meals;
+  final MealModel? meals;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -15,13 +15,15 @@ class MealCard extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Image.network(meals.imageUrl, width: double.infinity),
+              child: meals?.imageUrl != null
+                  ? Image.network(meals!.imageUrl, width: double.infinity)
+                  : Container(width: double.infinity, color: Colors.grey[300]),
             ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             child: Text(
-              meals.title,
+              meals?.title ?? 'Title Placeholder',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -32,7 +34,7 @@ class MealCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             child: Text(
-              meals.subTitle,
+              meals?.subTitle ?? 'Subtitle Placeholder',
               style: TextStyle(fontSize: 16, color: Color(0xff3C2F2F)),
             ),
           ),
@@ -46,7 +48,7 @@ class MealCard extends StatelessWidget {
                     Icon(Icons.star, color: Color(0xffFF9633), size: 16),
                     SizedBox(width: 4),
                     Text(
-                      meals.rate.toString(),
+                      meals?.rate.toString() ?? '0.0',
                       style: TextStyle(fontSize: 14, color: Color(0xff3C2F2F)),
                     ),
                   ],
