@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "437673069392",
+    "project_id": "sindhri-9b9c8",
+    "storage_bucket": "sindhri-9b9c8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437673069392:android:1e261b4243a8d05b28ba55",
+        "android_client_info": {
+          "package_name": "com.example.sindhri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE6Z9T8ImP-VDUPndy7Hf8sO4MzKKwab4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,6 +8,7 @@ class AssetsData {
       'assets/Images/splash/Splash_Burger_One.png';
   static const String splashBurgerTwo =
       'assets/Images/splash/Splash_Burger_Two.png';
+  static const String splash = 'assets/Images/splash/splash.png';
   static const String bacons = 'assets/Images/toppings/Bacons.png';
   static const String coleslaw = 'assets/Images/toppings/Coleslaw.png';
   static const String fries = 'assets/Images/toppings/Fries.png';
@@ -31,4 +32,8 @@ class AssetsData {
   static const String logo = 'assets/SVG/splash/logo.svg';
   static const String addIcon = 'assets/SVG/add.svg';
   static const String removeIcon = 'assets/SVG/remove.svg';
+  static const String google = 'assets/Images/google.png';
+  static const String facebook = 'assets/Images/facebook.png';
+  static const String twitter = 'assets/Images/twitter.png';
+
 }

@@ -7,26 +7,35 @@ environment:
   sdk: ^3.8.1
 
 dependencies:
+  cloud_firestore: ^5.6.9
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  firebase_core: ^3.14.0
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
   flutter_svg: ^2.2.0
+  hexcolor: ^3.0.1
+  skeletonizer: ^2.1.0+1
 
 dev_dependencies:
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
-  
+
   # Assets configuration
   assets:
     - assets/Images/Customize_Your_Burger/
     - assets/Images/Payment/
     - assets/Images/profile/
     - assets/Images/splash/
+    - assets/Images/LoginScreen/
     - assets/Images/toppings/
     - assets/SVG/home/
     - assets/SVG/splash/
     - assets/SVG/profile/
     - assets/SVG/
+    - assets/Images/Products/
