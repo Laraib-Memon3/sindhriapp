@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sindhri/view/home_screen.dart';
+import 'package:sindhri/view/payment_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -22,7 +23,7 @@ class MainApp extends StatelessWidget {
       ),
       title: 'Sindhri',
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: PaymentScreen(),
     );
   }
 }
