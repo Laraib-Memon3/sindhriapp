@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Product1 extends StatefulWidget {
+<<<<<<< HEAD:lib/view/Product1.dart
   String name;
   String description;
   String rating;
@@ -17,6 +18,10 @@ class Product1 extends StatefulWidget {
     required this.Price,
     required this.image,
   });
+=======
+  const Product1({super.key});
+
+>>>>>>> 1e1e7c9e504655401eb9917fe1f84a70403f831b:lib/view/product1.dart
   @override
   State<Product1> createState() => _Product1State();
 }

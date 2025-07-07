@@ -4,6 +4,8 @@ import 'package:sindhri/core/services/firestore_service.dart';
 import 'package:sindhri/core/theming/assets_data.dart';
 import 'package:sindhri/data/repos/meal_repo.dart';
 import 'package:sindhri/view/home_screen.dart';
+// import 'package:sindhri/view/home_screen.dart';
+import 'package:sindhri/view/loginscreen.dart';
 import 'package:sindhri/view/manager/meal_cubit/meal_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -31,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             create: (context) => MealCubit(
               mealRepo: MealRepo(firestoreService: FirestoreService()),
             ),
-            child: const HomeScreen(),
+            child: const LoginScreen(),
           );
         },
       ),
