@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             create: (context) => MealCubit(
               mealRepo: MealRepo(firestoreService: FirestoreService()),
             ),
-            child: const HomeScreen(),
+            child: const LoginScreen(),
           );
         },
       ),
