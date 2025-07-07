@@ -1,8 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:sindhri/view/home_screen.dart';
-import 'package:sindhri/view/payment_screen.dart';
+import 'package:sindhri/view/splash_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MainApp());
 }
 
@@ -23,7 +26,7 @@ class MainApp extends StatelessWidget {
       ),
       title: 'Sindhri',
       debugShowCheckedModeBanner: false,
-      home: PaymentScreen(),
+      home: SplashScreen(),
     );
   }
 }

@@ -1,32 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:sindhri/data/models/meal_model.dart';
+import 'package:sindhri/view/payment_screen.dart';
 
-class Product1 extends StatefulWidget {
-<<<<<<< HEAD:lib/view/Product1.dart
-  String name;
-  String description;
-  String rating;
-  String time;
-  String Price;
-  AssetImage image;
+class MealDetailsScreen extends StatefulWidget {
+  final MealModel mealModel;
 
-  Product1({
-    required this.name,
-    required this.description,
-    required this.rating,
-    required this.time,
-    required this.Price,
-    required this.image,
-  });
-=======
-  const Product1({super.key});
+  const MealDetailsScreen({super.key, required this.mealModel});
 
->>>>>>> 1e1e7c9e504655401eb9917fe1f84a70403f831b:lib/view/product1.dart
   @override
-  State<Product1> createState() => _Product1State();
+  State<MealDetailsScreen> createState() => _Product1State();
 }
 
-class _Product1State extends State<Product1> {
+class _Product1State extends State<MealDetailsScreen> {
   RangeValues values = RangeValues(0, 100);
 
   void _increaseRange() {
@@ -50,52 +37,60 @@ class _Product1State extends State<Product1> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(left: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 370,
-                width: double.infinity,
-                child: Image(image: widget.image),
-              ),
-              SizedBox(height: 1),
-              Text(
-                widget.name,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(
-                height: 30,
-                child: Row(
-                  children: [
-                    Icon(Icons.star, color: Colors.orangeAccent, size: 17),
-                    SizedBox(width: 3),
-                    Text(
-                      "${widget.rating} - ${widget.time} minutes",
-                      style: TextStyle(color: Colors.white, fontSize: 15),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 370,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(40),
+                    child: Image.network(
+                      widget.mealModel.imageUrl,
+                      fit: BoxFit.fill,
                     ),
-                  ],
+                  ),
                 ),
-              ),
-              SizedBox(height: 15),
-              SizedBox(
-                height: 150,
-                width: 335,
-                child: Text(widget.description),
-              ),
-              SizedBox(height: 20),
+                SizedBox(height: 1),
+                Text(
+                  widget.mealModel.title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                  child: Row(
+                    children: [
+                      Icon(Icons.star, color: Colors.orangeAccent, size: 17),
+                      SizedBox(width: 3),
+                      Text(
+                        "${widget.mealModel.rate} - ${widget.mealModel.mins} minutes",
+                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 15),
+                SizedBox(
+                  height: 150,
+                  width: 335,
+                  child: Text(widget.mealModel.details),
+                ),
+                SizedBox(height: 20),
 
-              // Range Slider Method Call
-              rangeliderAndButtons(),
+                // Range Slider Method Call
+                rangeliderAndButtons(),
 
-              SizedBox(height: 50),
+                SizedBox(height: 50),
 
-              //Order Now button Method Call
-              priceOrderNowButton(),
-            ],
+                //Order Now button Method Call
+                priceOrderNowButton(),
+              ],
+            ),
           ),
         ),
       ),
@@ -206,7 +201,7 @@ class _Product1State extends State<Product1> {
               ),
               child: Center(
                 child: Text(
-                  "\$ ${widget.Price}",
+                  "\$ ${widget.mealModel.price}",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -222,20 +217,32 @@ class _Product1State extends State<Product1> {
               onTap: () {
                 //Click event Here on Order Now Button
               },
-              child: Container(
-                width: 200,
-                height: 140,
-                decoration: BoxDecoration(
-                  color: HexColor("#FF0417"),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Center(
-                  child: Text(
-                    "ORDER NOW",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return PaymentScreen();
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 200,
+                  height: 140,
+                  decoration: BoxDecoration(
+                    color: HexColor("#FF0417"),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "ORDER NOW",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),

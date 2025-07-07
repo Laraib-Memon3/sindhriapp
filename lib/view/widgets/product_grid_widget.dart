@@ -5,19 +5,8 @@ import 'package:sindhri/view/manager/meal_cubit/meal_cubit.dart';
 import 'package:sindhri/view/widgets/meal_card.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class ProductGrid extends StatefulWidget {
+class ProductGrid extends StatelessWidget {
   const ProductGrid({super.key});
-
-  @override
-  State<ProductGrid> createState() => _ProductGridState();
-}
-
-class _ProductGridState extends State<ProductGrid> {
-  @override
-  void initState() {
-    super.initState();
-    context.read<MealCubit>().getMeals();
-  }
 
   @override
   Widget build(BuildContext context) {

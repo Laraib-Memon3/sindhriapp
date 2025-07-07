@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sindhri/core/services/firestore_service.dart';
 import 'package:sindhri/core/theming/assets_data.dart';
-import 'package:sindhri/data/repos/meal_repo.dart';
-import 'package:sindhri/view/home_screen.dart';
-// import 'package:sindhri/view/home_screen.dart';
-import 'package:sindhri/view/loginscreen.dart';
-import 'package:sindhri/view/manager/meal_cubit/meal_cubit.dart';
+import 'package:sindhri/view/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,22 +13,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _navigateToHome();
+    _navigateToLogin();
   }
 
-  void _navigateToHome() async {
+  void _navigateToLogin() async {
     await Future.delayed(const Duration(seconds: 3));
     Navigator.pushReplacement(
       // ignore: use_build_context_synchronously
       context,
       MaterialPageRoute(
         builder: (context) {
-          return BlocProvider(
-            create: (context) => MealCubit(
-              mealRepo: MealRepo(firestoreService: FirestoreService()),
-            ),
-            child: const LoginScreen(),
-          );
+          return const LoginScreen();
         },
       ),
     );

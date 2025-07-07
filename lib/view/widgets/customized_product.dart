@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CustomizedBurger extends StatefulWidget {
+  const CustomizedBurger({super.key});
+
   @override
   State<StatefulWidget> createState() => CustomizedBurgerState();
 }
@@ -22,10 +24,10 @@ class CustomizedBurgerState extends State<CustomizedBurger> {
     });
   }
 
-  List<String> TopingsNamelist = ["Tomato", "Onions", "Pickles", "Becons"];
-  List<AssetImage> Topingimages = [];
-  List<String> SideOptionlist = ["Fries", "Colslaw", "Salad", "Onions"];
-  List<AssetImage> SideOptionimages = [];
+  List<String> topingsNamelist = ["Tomato", "Onions", "Pickles", "Becons"];
+  List<AssetImage> topingimages = [];
+  List<String> sideOptionlist = ["Fries", "Colslaw", "Salad", "Onions"];
+  List<AssetImage> sideOptionimages = [];
 
   @override
   Widget build(BuildContext context) {
@@ -195,7 +197,7 @@ class CustomizedBurgerState extends State<CustomizedBurger> {
               height: 120,
               width: double.infinity,
               child: ListView.builder(
-                itemCount: TopingsNamelist.length,
+                itemCount: topingsNamelist.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Padding(
@@ -227,7 +229,7 @@ class CustomizedBurgerState extends State<CustomizedBurger> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    TopingsNamelist[index],
+                                    topingsNamelist[index],
                                     style: TextStyle(color: Colors.white),
                                   ),
                                   SizedBox(height: 10),
@@ -285,7 +287,7 @@ class CustomizedBurgerState extends State<CustomizedBurger> {
               height: 120,
               width: double.infinity,
               child: ListView.builder(
-                itemCount: SideOptionlist.length,
+                itemCount: sideOptionlist.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Padding(
@@ -316,7 +318,7 @@ class CustomizedBurgerState extends State<CustomizedBurger> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    SideOptionlist[index],
+                                    sideOptionlist[index],
                                     style: TextStyle(color: Colors.white),
                                   ),
                                   SizedBox(height: 10),
@@ -364,27 +366,25 @@ class CustomizedBurgerState extends State<CustomizedBurger> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Total ",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                    Column(
+                      children: [
+                        Text(
+                          "Total ",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),
-                          Text(
-                            "\$ 9.74",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        ),
+                        Text(
+                          "\$ 9.74",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 0),

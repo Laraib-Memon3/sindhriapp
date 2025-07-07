@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sindhri/core/services/firestore_service.dart';
 import 'package:sindhri/core/theming/assets_data.dart';
-import 'package:sindhri/view/widgets/signupscreen.dart';
+import 'package:sindhri/data/repos/meal_repo.dart';
+import 'package:sindhri/view/home_screen.dart';
+import 'package:sindhri/view/manager/meal_cubit/meal_cubit.dart';
+import 'package:sindhri/view/signup_screen.dart';
 
 void main() async {
   runApp(const LoginScreen());
@@ -118,12 +123,24 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // Add your sign-in logic here
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BlocProvider(
+                          create: (context) => MealCubit(
+                            mealRepo: MealRepo(
+                              firestoreService: FirestoreService(),
+                            ),
+                          )..getMeals(),
+                          child: HomeScreen(),
+                        ),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Sign In',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -152,10 +169,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: EdgeInsets.zero,
+                      padding: EdgeInsets.all(12),
                     ),
                     child: Image.asset(
                       AssetsData.google,
+
                       fit: BoxFit.contain,
                       alignment: Alignment.center,
                     ),
@@ -166,16 +184,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 60,
                   margin: const EdgeInsets.symmetric(horizontal: 5),
                   child: ElevatedButton(
-                    onPressed: () {
-                      // Add your Facebook sign-in logic here
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: EdgeInsets.zero,
+                      padding: EdgeInsets.all(8),
                     ),
                     child: Image.asset(
                       AssetsData.facebook,
@@ -189,16 +205,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 60,
                   margin: const EdgeInsets.symmetric(horizontal: 5),
                   child: ElevatedButton(
-                    onPressed: () {
-                      // Add your Facebook sign-in logic here
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: EdgeInsets.zero,
+                      padding: EdgeInsets.all(12),
                     ),
                     child: Image.asset(
                       AssetsData.twitter,
