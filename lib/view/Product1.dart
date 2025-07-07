@@ -2,12 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Product1 extends StatefulWidget {
+  String name;
+  String description;
+  String rating;
+  String time;
+  String Price;
+  AssetImage image;
+
+  Product1({
+    required this.name,
+    required this.description,
+    required this.rating,
+    required this.time,
+    required this.Price,
+    required this.image,
+  });
   @override
   State<Product1> createState() => _Product1State();
 }
 
 class _Product1State extends State<Product1> {
-  RangeValues values = RangeValues(0, 1);
+  RangeValues values = RangeValues(0, 100);
+
+  void _increaseRange() {
+    setState(() {
+      double newEnd = (values.end + 10).clamp(0, 100);
+      values = RangeValues(values.start, newEnd);
+    });
+  }
+
+  void _decreaseRange() {
+    setState(() {
+      double newEnd = (values.end - 10).clamp(0, 100);
+      values = RangeValues(values.start, newEnd);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +51,11 @@ class _Product1State extends State<Product1> {
               SizedBox(
                 height: 370,
                 width: double.infinity,
-                child: Image(
-                  image: AssetImage(
-                    "assets/Images/Products/Cheseburger_Wendey'sburger.png",
-                  ),
-                ),
+                child: Image(image: widget.image),
               ),
               SizedBox(height: 1),
               Text(
-                "Chesseburger Wendey's burger ",
+                widget.name,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -44,7 +69,7 @@ class _Product1State extends State<Product1> {
                     Icon(Icons.star, color: Colors.orangeAccent, size: 17),
                     SizedBox(width: 3),
                     Text(
-                      "4.9 - 26 minutes",
+                      "${widget.rating} - ${widget.time} minutes",
                       style: TextStyle(color: Colors.white, fontSize: 15),
                     ),
                   ],
@@ -54,9 +79,7 @@ class _Product1State extends State<Product1> {
               SizedBox(
                 height: 150,
                 width: 335,
-                child: Text(
-                  "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-                ),
+                child: Text(widget.description),
               ),
               SizedBox(height: 20),
 
@@ -114,7 +137,7 @@ class _Product1State extends State<Product1> {
           ),
           SizedBox(width: 30),
           GestureDetector(
-            onTap: () {},
+            onTap: _decreaseRange,
             child: Container(
               width: 30,
               height: 30,
@@ -134,7 +157,7 @@ class _Product1State extends State<Product1> {
           ),
           SizedBox(width: 10),
           GestureDetector(
-            onTap: () {},
+            onTap: _increaseRange,
             child: Container(
               width: 30,
               height: 30,
@@ -178,7 +201,7 @@ class _Product1State extends State<Product1> {
               ),
               child: Center(
                 child: Text(
-                  "\$8.24",
+                  "\$ ${widget.Price}",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -191,7 +214,9 @@ class _Product1State extends State<Product1> {
           Padding(
             padding: const EdgeInsets.only(right: 15),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                //Click event Here on Order Now Button
+              },
               child: Container(
                 width: 200,
                 height: 140,
