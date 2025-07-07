@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sindhri/core/theming/assets_data.dart';
+import 'package:sindhri/view/widgets/profile_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
@@ -32,7 +33,17 @@ class BottomNavBar extends StatelessWidget {
                   BlendMode.srcIn,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                if (i == 1) {
+                  // ده زر البروفايل
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfileScreen(),
+                    ),
+                  );
+                }
+              },
             ),
           const SizedBox(width: 40),
           for (int i = 2; i < icons.length; i++)

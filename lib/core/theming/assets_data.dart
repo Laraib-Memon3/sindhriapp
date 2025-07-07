@@ -2,8 +2,8 @@ class AssetsData {
   static const String customizeYourBurger =
       'assets/Images/Customize_Your_Burger/Customize_Your_Burger.png';
   static const String masterCard = 'assets/Images/Payment/Master_Card.png';
-  static const String profileIcon = 'assets/Images/Payment/Visa.png';
-  static const String visa = 'assets/Images/profile/Profile_Image.png';
+  static const String visa = 'assets/Images/Payment/Visa.png';
+  static const String profileImage  = 'assets/Images/profile/Profile_Image.png';
   static const String splashBurgerOne =
       'assets/Images/splash/Splash_Burger_One.png';
   static const String splashBurgerTwo =
